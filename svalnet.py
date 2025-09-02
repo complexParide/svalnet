@@ -13,11 +13,10 @@ from multiprocessing import Pool, cpu_count
 class SVN():
     
     def __init__(self, edgelist: pd.DataFrame, proj_column, nonproj_column):
-   	# edgelist: pandas dataframe of the edgelist
-   	# proj_column: name of the column of nodes we want to project and validate
-   	# nonproj_column: name of the column of nodes we don't want to project
-   	# All the other columns in the edgelist will be ignored
-        self.edgelist = edgelist.dropna()
+       	# edgelist: pandas dataframe of the edgelist
+       	# proj_column: name of the column of nodes we want to project and validate
+       	# nonproj_column: name of the column of nodes we don't want to project
+       	# All the other columns in the edgelist will be ignored
         self.proj_nodes = np.unique(self.edgelist[proj_column])
         self.nonproj_nodes = np.unique(self.edgelist[nonproj_column])
         self.N = self.proj_nodes.shape[0]
